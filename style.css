@@ -1,0 +1,375 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 18px;
+  font-family: "Courier New", monospace;
+  background-color: #000000;
+  color: #00ff00; /* Green default text */
+}
+
+.page {
+  width: min(1180px, 96vw);
+  margin: auto;
+  background: #0d0d0d;
+  border: 3px solid #00ffff; /* Teal border */
+  box-shadow: 0 0 15px #00ffff;
+}
+
+header {
+  min-height: 105px;
+  background: #001133; /* Dark Blue */
+  color: #00ffff; /* Teal */
+  border-bottom: 4px solid #ff3333; /* Red border */
+  display: grid;
+  grid-template-columns: 210px 1fr 100px 280px;
+  gap: 12px;
+  align-items: center;
+  padding: 12px;
+}
+
+.logo {
+  background: #ffff00; /* Yellow */
+  color: #000000;
+  border: 3px solid #ff3333; /* Red */
+  text-align: center;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 0.85;
+  padding: 9px;
+}
+
+.logo span {
+  font-size: 15px;
+  color: #ff3333; /* Red */
+}
+
+header #info {
+  font-size: 12px;
+  color: #ffff00; /* Yellow */
+  padding: 10px;
+  border-left: 2px dotted #00ffff; /* Teal */
+}
+
+button, input {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+header button, .search button {
+  background: #0055ff; /* Dark Blue */
+  color: #ffff00; /* Yellow */
+  border: 2px solid #00ffff; /* Teal */
+  font-weight: bold;
+  padding: 8px 5px;
+}
+
+header button:hover, .search button:hover {
+  background: #ff3333; /* Red */
+  color: #ffffff;
+}
+
+.search {
+  display: flex;
+}
+
+.search input {
+  width: 100%;
+  background: #050505;
+  color: #00ff00; /* Green */
+  border: 2px solid #00ffff; /* Teal */
+  padding: 8px;
+}
+
+.map {
+  background: #001133; /* Dark Blue */
+  color: #ffff00; /* Yellow */
+  padding: 9px;
+  text-align: center;
+  font-size: 12px;
+  border-bottom: 2px solid #ff3333; /* Red */
+}
+
+.hidden {
+  display: none !important;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 190px 1fr;
+  min-height: 610px;
+}
+
+aside {
+  background: #080808;
+  border-right: 3px solid #00ffff; /* Teal */
+  padding: 12px;
+}
+
+.sideTitle {
+  font-weight: bold;
+  background: #ff3333; /* Red */
+  color: #ffff00; /* Yellow */
+  padding: 9px;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.era {
+  display: block;
+  width: 100%;
+  text-align: left;
+  margin: 5px 0;
+  padding: 9px;
+  background: #001133; /* Dark Blue */
+  color: #00ffff; /* Teal */
+  border: 2px solid #00ffff;
+  font-weight: bold;
+}
+
+.era:hover, .era.active {
+  background: #ffff00; /* Yellow */
+  color: #000000;
+  border-color: #ff3333; /* Red */
+}
+
+hr {
+  border: 0;
+  border-top: 2px solid #ff3333; /* Red */
+  margin: 18px 0;
+}
+
+.status {
+  background: #000000;
+  color: #00ff00; /* Green */
+  border: 2px solid #0055ff; /* Dark Blue */
+  padding: 10px;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.content {
+  padding: 16px;
+  background: #050505;
+}
+
+.crumb {
+  font-size: 11px;
+  color: #00ffff; /* Teal */
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px double #ff3333; /* Red */
+  margin-bottom: 16px;
+  color: #ffff00; /* Yellow */
+}
+
+.head h1 {
+  font-size: 22px;
+}
+
+.head span {
+  font-size: 11px;
+  color: #00ff00; /* Green */
+}
+
+#grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background: #0a0a0a;
+  border: 2px solid #0055ff; /* Dark Blue */
+  padding: 7px;
+}
+
+.thumb {
+  height: 145px;
+  background: #000000;
+  border: 2px solid #ff3333; /* Red */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #00ff00; /* Green */
+  text-align: center;
+}
+
+.thumb b {
+  font-size: 18px;
+}
+
+.card h3 {
+  font-size: 15px;
+  margin: 9px 2px 3px;
+  color: #ffff00; /* Yellow */
+}
+
+.card p {
+  font-size: 11px;
+  margin: 3px 2px;
+  color: #00ffff; /* Teal */
+}
+
+.card button {
+  width: 100%;
+  margin-top: 8px;
+  background: #ff3333; /* Red */
+  color: #ffffff;
+  border: 1px solid #ffff00; /* Yellow */
+  padding: 7px;
+  font-weight: bold;
+}
+
+.card button:hover {
+  background: #0055ff; /* Dark Blue */
+  color: #ffff00; /* Yellow */
+}
+
+.empty {
+  padding: 40px;
+  text-align: center;
+  border: 2px dashed #ff3333; /* Red */
+  color: #ff3333;
+}
+
+.details {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 20;
+  padding: 24px;
+  overflow: auto;
+}
+
+.back {
+  background: #0055ff; /* Dark Blue */
+  color: #ffff00; /* Yellow */
+  border: 2px solid #00ffff; /* Teal */
+  padding: 9px;
+  font-weight: bold;
+}
+
+.detailInner {
+  max-width: 1000px;
+  margin: 35px auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 35px;
+  align-items: center;
+}
+
+.screen {
+  background: #000000;
+  border: 4px solid #00ffff; /* Teal */
+  padding: 12px;
+}
+
+.label {
+  color: #ffff00; /* Yellow */
+  background: #001133; /* Dark Blue */
+  padding: 5px;
+  font-size: 11px;
+}
+
+.fake {
+  height: 320px;
+  background: #000000;
+  border: 2px solid #ff3333; /* Red */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #00ff00; /* Green */
+}
+
+.fake b {
+  font-size: 34px;
+}
+
+.fake small {
+  margin-top: 20px;
+  color: #00ffff; /* Teal */
+}
+
+.gameInfo {
+  background: #0a0a0a;
+  border: 3px solid #ff3333; /* Red */
+  padding: 20px;
+  color: #00ff00; /* Green */
+}
+
+.stamp {
+  background: #ffff00; /* Yellow */
+  color: #000000;
+  border: 1px solid #ff3333; /* Red */
+  padding: 5px;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.gameInfo h2 {
+  font-size: 28px;
+  color: #ffff00; /* Yellow */
+}
+
+.gameInfo p {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #00ffff; /* Teal */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 12px;
+}
+
+td {
+  border: 1px solid #0055ff; /* Dark Blue */
+  padding: 8px;
+  color: #00ff00; /* Green */
+}
+
+td:first-child {
+  background: #001133; /* Dark Blue */
+  color: #ffff00; /* Yellow */
+  font-weight: bold;
+}
+
+.play {
+  width: 100%;
+  background: #ff3333; /* Red */
+  color: #ffffff;
+  border: 2px solid #ffff00; /* Yellow */
+  padding: 13px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.play:hover {
+  background: #00ff00; /* Green */
+  color: #000000;
+}
+
+@media (max-width: 800px) {
+  header {
+    grid-template-columns: 1fr 1fr;
+  }
+  .detailInner {
+    grid-template-columns: 1fr;
+  }
+  .fake {
+    height: 220px;
+  }
+}

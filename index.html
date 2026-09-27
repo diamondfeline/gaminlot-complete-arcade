@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gaminlot // Retro Arcade</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="logo">
+        Gaminlot
+      </div>
+      <div id="info">LOADING ARCADE INFO...</div>
+      <button onclick="toggleMap()">SITE MAP</button>
+      <div class="search">
+        <input id="search" placeholder="SEARCH GAMES..." onkeydown="if(event.key==='Enter') render()">
+        <button onclick="render()">GO</button>
+      </div>
+    </header>
+
+    <div id="map" class="map hidden">
+      HOME | 1970s | 1980s | 1990s | 2000s
+    </div>
+
+    <main>
+      <aside>
+        <div class="sideTitle">SELECT ERA</div>
+        <button class="era active" data-era="all">ALL GAMES</button>
+        <button class="era" data-era="1970s">1970s</button>
+        <button class="era" data-era="1980s">1980s</button>
+        <button class="era" data-era="1990s">1990s</button>
+        <button class="era" data-era="2000s">2000s</button>
+        <hr>
+        <div class="status">
+          <b>ARCADE STATUS</b><br>
+          ONLINE: LOCAL<br>
+          MODE: OFFLINE<br>
+          GAMES: <span id="count">0</span>
+        </div>
+      </aside>
+
+      <section class="content">
+        <div class="crumb" id="crumb">HOME &gt; ALL GAMES</div>
+        <div class="head">
+          <h1 id="archive-heading">Nostalgic Games from the last decades.</h1>
+          <span id="result">0 GAMES FOUND</span>
+        </div>
+        <div id="grid"></div>
+        <div id="empty" class="empty hidden">NO GAMES MATCHED YOUR SEARCH.</div>
+      </section>
+    </main>
+
+    <section id="details" class="details hidden">
+      <button class="back" onclick="closeDetails()">&laquo; BACK TO ARCADE</button>
+      <div class="detailInner">
+        <div class="screen">
+          <div class="label">GAME PREVIEW</div>
+          <div class="fake">
+            <b id="dp-title">GAME PREVIEW</b>
+            <small>CLICK PLAY TO START</small>
+          </div>
+        </div>
+        <div class="gameInfo">
+          <h2 id="dt"></h2>
+          <p id="dd"></p>
+          <table>
+            <tr>
+              <td>ERA</td>
+              <td id="de"></td>
+            </tr>
+            <tr>
+              <td>GENRE</td>
+              <td id="dg"></td>
+            </tr>
+            <tr>
+              <td>SOURCE</td>
+              <td id="ds"></td>
+            </tr>
+          </table>
+          <button id="play" class="play">&#9654; PLAY GAME</button>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
